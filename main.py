@@ -38,3 +38,12 @@ class GAME(object):
         # else:
         #     return 0
 
+    def PRINT(self):
+        def chec():
+            if (self.ball == 11):
+                global Rez
+                Rez = 1
+                window.destroy()
+            if (self.ball == -11):
+                Rez = 0
+                window.destroy()
