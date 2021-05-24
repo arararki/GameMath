@@ -122,3 +122,47 @@ class GAME(object):
         suma.focus()
 
         window.mainloop()
+
+
+
+if __name__ == "__main__":
+    a = 0
+    b = 0
+    znak = ''
+    ball = 0
+
+    a = random.randint(1, 100)
+    b = random.randint(1, 100)
+    c = random.randint(1, 4)
+
+    if (c == 1):
+        znak = '+'
+    if (c == 2):
+        znak = '-'
+    if (c == 3):
+        znak = '*'
+    if (c == 4):
+        znak = '/'
+
+    start = GAME(a, b, znak, ball)
+    start.PRINT()
+
+    if(Rez == 1):
+        root = Tk()
+        img = ImageTk.PhotoImage(Image.open("Котик.png"))
+        panel = Label(root, image=img)
+        panel.pack(side="bottom", fill="both", expand="yes")
+        root.mainloop()
+    if(Rez == 0):
+        root = Tk()
+        img = ImageTk.PhotoImage(Image.open("3bVvalH00wI.jpg"))
+        panel = Label(root, image=img)
+        panel.pack(side="bottom", fill="both", expand="yes")
+        root.mainloop()
+
+    # if (start.sumator() == 1):
+    #     ball += 1
+    #     print("Ваши баллы: " + str(ball))
+    # else:
+    #     ball -= 1
+    #     print("Ваши баллы: " + str(ball))

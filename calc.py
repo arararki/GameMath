@@ -28,8 +28,17 @@ def for3():
     sum2 = sum2 * 61
     return sum1+sum2
 
+def for4(n):
+    if n == 0:
+        return 7
+    if n == 1:
+        return 2
+    if (n):
+        return (1/98)*((zad4(n-1))**2)-tan(zad4(n-1))
 
 
 print("Ответ первый: " + str("{:e}".format(for1())))
 print("Ответ второй: " + str("{:e}".format(for2())))
 print("Ответ третий: " + str("{:e}".format(for3())))
+n = int(input("N = "))
+print("Ответ четвертый: " + str("{:e}".format(for4(n))))
