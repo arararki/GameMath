@@ -47,3 +47,48 @@ class GAME(object):
             if (self.ball == -11):
                 Rez = 0
                 window.destroy()
+    
+            def Potverd():
+            s = suma.get()
+            if not s.isdigit():
+                mb.showerror(
+                    "Ошибка",
+                    "Должно быть введено число")
+            else:
+                if (start.sumator() == int(suma.get())):
+                    self.ball += 1
+
+                    self.a = random.randint(1, 100)
+                    self.b = random.randint(1, 100)
+                    c = random.randint(1, 4)
+
+                    if (c == 1):
+                        self.znak = '+'
+                    if (c == 2):
+                        self.znak = '-'
+                    if (c == 3):
+                        self.znak = '*'
+                    if (c == 4):
+                        self.znak = '/'
+                else:
+                    self.ball -= 1
+
+                    self.a = random.randint(1, 100)
+                    self.b = random.randint(1, 100)
+                    c = random.randint(1, 4)
+
+                    if (c == 1):
+                        self.znak = '+'
+                    if (c == 2):
+                        self.znak = '-'
+                    if (c == 3):
+                        self.znak = '*'
+                    if (c == 4):
+                        self.znak = '/'
+
+                lbl1.config(text=str(self.a) + " " + str(self.znak) + " " + str(self.b) + " = ")
+                # lbl2.config(text=str(self.znak))
+                # lbl3.config(text=str(self.b))
+                lbl4.config(text="Ваши баллы: " + str(self.ball))
+
+                chec()
