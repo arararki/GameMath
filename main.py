@@ -92,3 +92,33 @@ class GAME(object):
                 lbl4.config(text="Ваши баллы: " + str(self.ball))
 
                 chec()
+
+        window = Tk()
+
+        window.title("Математическая игра")
+        window.geometry('700x350')
+
+        s = Style()
+        s.configure('My.TFrame', background='red')
+        mail1 = Frame(window, style='My.TFrame')
+        mail1.place(height=350, width=700)
+        mail1.config()
+
+        lbl1 = Label(window, text=str(self.a) + " " + str(self.znak) + " " + str(self.b) + " = ")
+        lbl1.grid(column=0, row=0)
+        # lbl2 = Label(window, text=str(self.znak))
+        # lbl2.grid(column=1, row=0)
+        # lbl3 = Label(window, text=str(self.b) + " =")
+        # lbl3.grid(column=2, row=0)
+
+        lbl4 = Label(window, text="Ваши баллы: " + str(self.ball))
+        lbl4.grid(column=0, row=1)
+
+        suma = Entry(window, width=10)
+        suma.grid(column=1, row=0)
+
+        btn1 = Button(window, text="Потвердить", command=Potverd)
+        btn1.grid(column=0, row=2)
+        suma.focus()
+
+        window.mainloop()
