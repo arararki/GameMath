@@ -33,9 +33,6 @@ def f21(x):
     if x[0] == 1985:
         return 12
 
-
-
-
 def f22(x):
     temp_ = bin(x)
     temp = (str(temp_[2:]))
@@ -64,8 +61,34 @@ def trans(new_tabl,new_tabl_):
         new_tabl_.append(row)
     return new_tabl_
 
+def f23(tabl):
+    pr = []
+    for i in range(1,101):
+        pr.append(str(i) + '%')
+    for i in range(len(tabl)):
+        for j in range(len(tabl[i])):
+            if tabl[j][i] == None:
+                continue
+            if tabl[j][i] == 'Не выполнено':
+                tabl[j][i] = 'Нет'
+            if tabl[j][i] == 'Выполнено':
+                tabl[j][i] = 'Да'
+            for k in range(len(pr)):
+                if tabl[j][i] == pr[k]:
+                    tabl[j][i] = str("{:f}".format(int(pr[k][:-1]) * 0.01))[:-4]
+            tabl[j][i] = tabl[j][i].replace('(', "")
+            tabl[j][i] = tabl[j][i].replace(')', "")
+            tabl[j][i] = tabl[j][i].replace('‐', "")
+            tabl[j][i] = tabl[j][i].replace(' ', "")
+    s = [e for e in tabl if None not in e]
+    new_tabl = s.copy()
+    new_tabl_ = []
+    trans(new_tabl,new_tabl_)
+    return new_tabl_
+
 x = [1972, 2004, 'ampl', 1992, 'r']
 f21(x)
-
 x = 0x3799ec28
 f22(x)
+tabl = [['Не выполнено', 'Не выполнено', 'Выполнено', 'Не выполнено'], ['76%', '95%', '44%', '85%'], [None, None, None, None], ['(992) 921‐8281', '(969) 012‐1944', '(582) 269‐6583', '(043) 503‐2943']]
+f23(tabl)
